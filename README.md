@@ -45,3 +45,12 @@ git checkout --track origin/7.13
 # 由于我们认证并没有关闭，因此启动ES实例的访问需要认证信息
 用户：elastic-admin 密码：elastic-password
 ```
+
+## 源码
+核心源码在server这个模块下
+![img.png](img.png)
+* cluster模块，集群管理相关功能
+* discovery模块，实现的master选举及其他节点的加入与脱离通知
+* transport模块，实现了节点间通信逻辑
+* rest模块，其中注册了各种http请求接口
+

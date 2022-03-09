@@ -34,3 +34,14 @@ git checkout --track origin/7.13
 ## 编译
 1. 执行 gradle idea
 2. 导入idea
+
+## 启动Elasticsearch实例
+1. jvm.options文件添加配置
+   -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+2. 执行下面命令
+```java
+# 打开terminal进入源码目录下执行以下命令
+./gradlew run
+# 由于我们认证并没有关闭，因此启动ES实例的访问需要认证信息
+用户：elastic-admin 密码：elastic-password
+```
